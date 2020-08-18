@@ -1,20 +1,6 @@
 <?php include 'config.php'; ?>
 <?php include 'template_start.php'; ?>
-<?php
-$user_id = 0;
-$query = "SELECT
-users.contact_no
-FROM `users`
-WHERE
-users.user_id = '1'
-";
 
-$sql = mysqli_query($con_main, $query);
-
-$type = mysqli_fetch_array($sql);
-$user_id = $type['contact_no'];
-
-?>
 <!-- Page content -->
 <div id="page-content">
     <!-- Blank Header -->
@@ -113,20 +99,20 @@ $user_id = $type['contact_no'];
     });
     //-----------end date validation ----------
 
-    //-------- start numbers only validation -------
+    //-------- start numbers only function  -------
     $(".OnlyNumber").numeric({
         allowMinus: false,
         allowSpace: false,
         maxDigits: 10
     });
-    //-------- end numbers only validation -------
+    //-------- end numbers only function -------
 
-    //------------ start text only validation -------
+    //------------ start text only function -------
     $(".OnlyText").alphanum({
         allowNumeric: false,
         allowOtherCharSets: false
     });
-    //------------ end text only validation -------
+    //------------ end text only function -------
 
     //-------- start insert function --------------
     $('#form-header').validate({
